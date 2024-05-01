@@ -1,14 +1,14 @@
 <?php
-   //exmplo de acesso a dados usando POO por meio
-   //de uma classe Model e gerando lista de 
-  include_once 'conexao.php';
-  include_once './MODEL/Departamento.php';
+
+  include_once 'C:\xampp\htdocs\lpadst1php2024\DAL\conexao.php';
+  include_once 'C:\xampp\htdocs\lpadst1php2024\MODEL\Departamento.php';
   
   $sql = "Select * from departamento;"; 
-  $con = Conexao::conectar(); 
-  $dados = $con->query($sql);
-  
-  foreach ($dados as $linha){
+  $con = \DAL\Conexao::conectar(); 
+  $registros = $con->query($sql);
+  $con = \DAL\Conexao::desconectar(); 
+
+  foreach ($registros as $linha){
       $dpto = new \MODEL\Departamento(); 
       $dpto->setId($linha['id']); 
       $dpto->setDescricao($linha['descricao']);

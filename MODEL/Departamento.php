@@ -1,6 +1,6 @@
 <?php 
   namespace MODEL; 
-  class Departamento{
+  class Departamento {
        private ?int $id; 
        private ?string $descricao; 
 
