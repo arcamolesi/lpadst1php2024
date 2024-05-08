@@ -1,9 +1,9 @@
 <?php
-   include_once 'C:\xampp\htdocs\lpadst1php2024\DAL\Departamento.php';
-   use DAL\Departamento;
+   include_once 'C:\xampp\htdocs\lpadst1php2024\DAL\Equipamento.php';
+   use DAL\Equipamento;
    
-   $dalDpto = new DAL\Departamento();
-   $lstDpto = $dalDpto->Select(); 
+   $dalEqpto = new DAL\Equipamento();
+   $lstEqpto = $dalEqpto->Select(); 
 
 ?>
 
@@ -18,20 +18,26 @@
             
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar Departamento usando Model</title>
+    <title>Listar Equipamentos</title>
 </head>
 <body>
-    <h1>Listar Departamento</h1>
+    <h1>Listar Equipamentos</h1>
     <table class="highlight">
         <tr>
             <th>ID</th>
             <th>Descrição</th>
+            <th>Responsável</th>
+            <th>Departamento</th>
+            <th>Compra</th>
         </tr>
         
-        <?php foreach($lstDpto as $dpto) { ?>
+        <?php foreach($lstEqpto as $eqpto) { ?>
            <tr>
-              <td><?php echo $dpto->getId(); ?></td>
-              <td><?php echo $dpto->getDescricao();?></td>
+              <td><?php echo $eqpto->getId(); ?></td>
+              <td><?php echo $eqpto->getDescricao();?></td>
+              <td><?php echo $eqpto->getResponsavel();?></td>
+              <td><?php echo $eqpto->getDepartamento();?></td>
+              <td><?php echo $eqpto->getCompra();?></td>
            </tr>
         <?php } ?>
 
