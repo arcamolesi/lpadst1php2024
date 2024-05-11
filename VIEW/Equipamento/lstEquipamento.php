@@ -1,9 +1,9 @@
 <?php
-   include_once 'C:\xampp\htdocs\lpadst1php2024\DAL\Equipamento.php';
-   use DAL\Equipamento;
-   
-   $dalEqpto = new DAL\Equipamento();
-   $lstEqpto = $dalEqpto->Select(); 
+   include_once 'C:\xampp\htdocs\lpadst1php2024\BLL\Equipamento.php'; 
+   use BLL\Equipamento; 
+
+   $bllEqpt = new \BLL\Equipamento(); 
+   $lstEqpto = $bllEqpt->Select(); 
 
 ?>
 
