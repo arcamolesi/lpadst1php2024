@@ -11,6 +11,12 @@ class Equipamento
         return $dalEqpto->Select();
     }
 
+    public function SelectByID(int $id)
+    {   
+        $dalEqpto = new \DAL\Equipamento();   
+        return $dalEqpto->SelectByID($id);
+    }
+
     public function Insert(\MODEL\Equipamento $equipamento) {
         $dalEqpto = new \DAL\Equipamento();   
 
@@ -19,6 +25,14 @@ class Equipamento
         return $dalEqpto->Insert($equipamento);
     }
 
+
+    public function Update(\MODEL\Equipamento $equipamento) {
+        $dalEqpto = new \DAL\Equipamento();   
+
+        ///regras de negócio que dependem do sistema propoto 
+        
+        return $dalEqpto->Update($equipamento);
+    }
 
 
 }

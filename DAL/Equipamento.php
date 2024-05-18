@@ -26,6 +26,28 @@ class Equipamento
 
     }
 
+
+    public function SelectByID(int $id)
+    {
+        //recuperar do banco de dados
+        $sql = "Select * from equipamento where id=?;";
+        $con = Conexao::conectar(); 
+        $query = $con->prepare($sql);
+        $query->execute (array($id));
+        $linha = $query->fetch(\PDO::FETCH_ASSOC);
+        Conexao::desconectar(); 
+
+        $eqpto = new \MODEL\Equipamento();
+        $eqpto->setId($linha['id']);
+        $eqpto->setDescricao($linha['descricao']);
+        $eqpto->setResponsavel($linha['responsavel']);
+        $eqpto->setDepartamento($linha['departamento']);
+        $eqpto->setCompra($linha['compra']);
+   
+        return $eqpto;
+
+    }
+
     public function Insert(\MODEL\Equipamento $equipamento){
         $sql = "INSERT INTO equipamento (descricao, responsavel, departamento, compra) VALUES ('{$equipamento->getDescricao()}','{$equipamento->getResponsavel()}', '{$equipamento->getDepartamento()}', '{$equipamento->getCompra()}');";
         
@@ -43,6 +65,18 @@ class Equipamento
        // echo $equipamento->getCompra() . "</br>";
 
     }
+
+    public function Update(\MODEL\Equipamento $equipamento){
+        $sql = "UPDATE equipamento SET descricao = ?, responsavel = ?, departamento = ?, compra = ? WHERE id = ?;";
+        
+        $con = Conexao::conectar();
+        $query = $con->prepare($sql);
+        $result = $query->execute(array($equipamento->getDescricao(), $equipamento->getResponsavel(), $equipamento->getDepartamento(), $equipamento->getCompra(), $equipamento->getID()));
+        $con = Conexao::desconectar();
+      
+        return $result; 
+    }
+
 }
 
 ?>

@@ -15,13 +15,18 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar Equipamentos</title>
 </head>
 <body>
     <h1>Listar Equipamentos</h1>
+
+    <a class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons" onclick="JavaScript:location.href='formEquipamento.php'">add</i></a>
+
     <table class="highlight">
         <tr>
             <th>ID</th>
@@ -29,6 +34,7 @@
             <th>Responsável</th>
             <th>Departamento</th>
             <th>Compra</th>
+            <th>Operações</th>
         </tr>
         
         <?php foreach($lstEqpto as $eqpto) { ?>
@@ -38,6 +44,11 @@
               <td><?php echo $eqpto->getResponsavel();?></td>
               <td><?php echo $eqpto->getDepartamento();?></td>
               <td><?php echo $eqpto->getCompra();?></td>
+              <td>
+              <a class="btn-floating btn-small waves-effect waves-light orange" onclick="JavaScript:location.href='formEdtEqpto.php?id=' + '<?php echo $eqpto->getID();?>'" ><i class="material-icons">edit</i></a>
+
+
+              </td>
            </tr>
         <?php } ?>
 
