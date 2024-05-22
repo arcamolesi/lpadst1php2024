@@ -77,6 +77,19 @@ class Equipamento
         return $result; 
     }
 
+    public function Delete($id){
+        $sql = "delete from equipamento WHERE id = ?;";
+        
+        $con = Conexao::conectar();
+        $query = $con->prepare($sql);
+        $result = $query->execute(array( $id ));
+        $con = Conexao::desconectar();
+      
+        return $result; 
+    }
+
+
+
 }
 
 ?>

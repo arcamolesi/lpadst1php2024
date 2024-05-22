@@ -25,7 +25,7 @@
 <body>
     <h1>Listar Equipamentos</h1>
 
-    <a class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons" onclick="JavaScript:location.href='formEquipamento.php'">add</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons" onclick="JavaScript:location.href='formEquipamento.php'">add</i></a>
 
     <table class="highlight">
         <tr>
@@ -45,8 +45,13 @@
               <td><?php echo $eqpto->getDepartamento();?></td>
               <td><?php echo $eqpto->getCompra();?></td>
               <td>
-              <a class="btn-floating btn-small waves-effect waves-light orange" onclick="JavaScript:location.href='formEdtEqpto.php?id=' + '<?php echo $eqpto->getID();?>'" ><i class="material-icons">edit</i></a>
+              <a class="btn-floating btn-small waves-effect waves-light orange" onclick="JavaScript:location.href='formEdtEqpto.php?id=' + '<?php echo $eqpto->getID();?>'">
+              <i class="material-icons">edit</i></a>
 
+              <a class="btn-floating btn-small waves-effect waves-light blue" onclick="JavaScript:location.href='formDetEqpto.php?id=' + '<?php echo $eqpto->getID();?>'" ><i class="material-icons">details</i></a>
+
+              <a class="btn-floating btn-small waves-effect waves-light red" onclick="JavaScript: remover( <?php echo $eqpto->getId(); ?> )" >
+              <i class="material-icons">delete</i></a>
 
               </td>
            </tr>
@@ -55,3 +60,12 @@
     </table>
 </body>
 </html>
+
+
+<script>
+    function remover(id) {
+        if (confirm('Excluir o Equipamento ' + id + '?')) {
+            location.href = 'remEqpto.php?id=' + id;
+        }
+    }
+</script>

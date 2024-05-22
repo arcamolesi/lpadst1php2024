@@ -43,11 +43,13 @@
                 </div>
 
                 <div class="input-field col s8">
-                    <input placeholder="informe descrição do equipamento" id="descricao" name="txtDesc" type="text" class="validate" value="<?php echo $equipamento->getDescricao();?>">
+                    <input placeholder="informe descrição do equipamento" id="descricao" name="txtDesc" type="text" class="validate" 
+                    value="<?php echo $equipamento->getDescricao();?>">
                     <label id="banana" for="descricao">Descrição</label>
                 </div>
                 <div class="input-field col s8">
-                    <input placeholder="informe o responsáve" id="responsavel" name="txtResp" type="text" class="validate" value="<?php echo $equipamento->getResponsavel();?>">
+                    <input placeholder="informe o responsáve" id="responsavel" name="txtResp" type="text" class="validate"
+                     value="<?php echo $equipamento->getResponsavel();?>">
                     <label for="responsavel">Responsável</label>
                 </div>
                 <div class="input-field col s5">

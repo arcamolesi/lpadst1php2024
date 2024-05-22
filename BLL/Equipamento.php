@@ -34,6 +34,13 @@ class Equipamento
         return $dalEqpto->Update($equipamento);
     }
 
+   public function Delete(int $id)
+    {   
+        $dalEqpto = new \DAL\Equipamento();   
+        return $dalEqpto->Delete($id);
+    }
+
+
 
 }
 ?>
