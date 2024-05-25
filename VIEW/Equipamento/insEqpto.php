@@ -7,7 +7,7 @@
 
     $equipamento->setDescricao($_POST['txtDesc']);
     $equipamento->setResponsavel($_POST['txtResp']);
-    $equipamento->setDepartamento($_POST['txtDep']);
+    $equipamento->setDepartamento($_POST['slcDep']);
     $equipamento->setCompra($_POST['txtCompra']);
 
     $bllEqpto = new \BLL\Equipamento(); 
