@@ -1,3 +1,9 @@
+<?php
+  session_start(); 
+   if (!isset($_SESSION['login']))
+       Header("Location: ../index.php");   
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +35,7 @@
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="/lpadst1php2024/view/departamento/lstDepartamento.php">Departamentos</a></li>
                 <li><a href="/lpadst1php2024/view/equipamento/lstEquipamento.php">Equipamentos</a></li>
-                <li><a href="collapsible.html">Logout</a></li>
+                <li><a href="/lpadst1php2024/view/logout.php">Logout</a></li>
             </ul>
         </div>
     </nav>
