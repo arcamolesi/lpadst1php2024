@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Validando formulários com JQuery Validation</title>
+<!-- Inclusão do jQuery-->
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<!-- Inclusão do Plugin jQuery Validation-->
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+
+</head>
+<body>
+    <form id="formularioValidation">
+        <fieldset>
+          <legend>Opções de validação do método validate() do plugin jQuery Validation</legend>
+          <p>
+            <label for="campo1">Regras: required, email e remote </label>
+            <input type="email" id="campo1" name="campo1">
+          </p>
+          <p>
+            <label for="campo2">Regras: minlength, maxlength e rangelength </label>
+            <input type="text" id="campo2" name="campo2">
+          </p>
+          <p>
+            <label for="campo3">Regras: min, max e range </label>
+            <input type="text" id="campo3" name="campo3">
+          </p>
+          <p>
+            <label for="campo4">Regras: accept </label>
+            <input type="file" id="campo4" name="campo4">
+          </p>
+          <p><b>Grupo de telefones, onde pelo o menos um deve ser válido</b><br/>
+            <label for="telefone_pessoal">1º require_from_group: Telefone pessoal: </label>
+            <input class="grupo_telefone" id="telefone_pessoal" name="telefone_pessoal">
+            <br/>
+            <label for="telefone_casa">1º require_from_group: Telefone casa: </label>
+            <input  class="grupo_telefone" id="telefone_casa" name="telefone_casa">
+            <br/>
+            <label for="telefone_trabalho">1º require_from_group: Telefone trabalho: </label>
+            <input class="grupo_telefone" id="telefone_trabalho" name="telefone_trabalho">
+          </p>
+          <input type="submit" value="Validar!">
+        </fieldset>
+      </form>
+
+<!-- Inclusão das validações com o Plugin jQuery Validation-->
+<script src="validacao2.js"></script>
+</body>
+</html>

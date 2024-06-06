@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Validando formulários com JQuery Validation</title>
+<!-- Inclusão do jQuery-->
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<!-- Inclusão do Plugin jQuery Validation-->
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+
+</head>
+<body>
+  <form id="formularioValidaTelefoneCelular">
+    <fieldset>
+    <legend>Criando uma validação customizada com o método estático addMethod(...)</legend>
+    <b>Validação do número de celular</b>
+    <p>
+    <label for="telefone_celular">Telefone celular:</label>
+      <input type="text" id="telefone_celular" name="telefone_celular">
+      </p>
+      <input type="submit" value="Validar!">
+      </fieldset>
+  </form>
+
+<!-- Inclusão das validações com o Plugin jQuery Validation-->
+<script src="validaFone.js"></script>
+</body>
+</html>
