@@ -30,7 +30,7 @@
         <div class="nav-wrapper orange darken-3">
             <a href="#" class="brand-logo right">
                 <img src="/lpadst1php2024/view/images/logo.png" alt=""
-                width="130" height="65">
+                width="130" height="65"> Usuario:  <?php echo $_SESSION['login']; ?>
             </a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="/lpadst1php2024/view/departamento/lstDepartamento.php">Departamentos</a></li>
