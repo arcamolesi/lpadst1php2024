@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19/04/2024 às 01:51
+-- Tempo de geração: 07/06/2024 às 01:56
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -29,6 +29,7 @@ USE `laboratorio`;
 -- Estrutura para tabela `departamento`
 --
 
+DROP TABLE IF EXISTS `departamento`;
 CREATE TABLE `departamento` (
   `id` int(11) NOT NULL,
   `descricao` varchar(35) NOT NULL
@@ -48,6 +49,7 @@ INSERT INTO `departamento` (`id`, `descricao`) VALUES
 -- Estrutura para tabela `equipamento`
 --
 
+DROP TABLE IF EXISTS `equipamento`;
 CREATE TABLE `equipamento` (
   `id` int(11) NOT NULL,
   `descricao` varchar(35) NOT NULL,
@@ -56,12 +58,30 @@ CREATE TABLE `equipamento` (
   `compra` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Despejando dados para a tabela `equipamento`
+--
+
+INSERT INTO `equipamento` (`id`, `descricao`, `responsavel`, `departamento`, `compra`) VALUES
+(2, 'Impressora 3D', 'Almir', 1, '0000-00-00'),
+(5, 'projeto ', 'Giovana', 2, '2024-05-10'),
+(8, 'SSD', 'Isadora', 2, '2024-05-12'),
+(15, 'Monitor 22pol', 'Maria Fernanda', 2, '2024-05-07'),
+(21, 'Celular', 'Samuel', 1, '2024-05-16'),
+(22, 'note i5', 'Célio', 1, '2024-05-16'),
+(23, 'Monitor 32 pol', 'Diego', 2, '2024-05-02'),
+(24, 'SSD', 'Mirele', 1, '2024-05-28'),
+(25, 'Impressora 3d', 'sda', 1, '2024-05-21'),
+(27, 'Notebook Samsung', 'Giovana', 1, '2024-05-23'),
+(28, 'monitor', 'Bruno', 1, '2024-05-23');
+
 -- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `inventario`
 --
 
+DROP TABLE IF EXISTS `inventario`;
 CREATE TABLE `inventario` (
   `id` int(11) NOT NULL,
   `software` int(11) NOT NULL,
@@ -75,6 +95,7 @@ CREATE TABLE `inventario` (
 -- Estrutura para tabela `software`
 --
 
+DROP TABLE IF EXISTS `software`;
 CREATE TABLE `software` (
   `id` int(11) NOT NULL,
   `descricao` varchar(35) NOT NULL,
@@ -84,16 +105,54 @@ CREATE TABLE `software` (
   `qtdcopias` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Despejando dados para a tabela `software`
+--
+
+INSERT INTO `software` (`id`, `descricao`, `fabricante`, `tipo`, `valor`, `qtdcopias`) VALUES
+(1, 'Windows', 'Microsoft', 6, 1000, 3),
+(2, 'Java', 'Oracle', 7, 0, 3);
+
 -- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `tiposoftware`
 --
 
+DROP TABLE IF EXISTS `tiposoftware`;
 CREATE TABLE `tiposoftware` (
   `id` int(11) NOT NULL,
   `descricao` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Despejando dados para a tabela `tiposoftware`
+--
+
+INSERT INTO `tiposoftware` (`id`, `descricao`) VALUES
+(6, 'Sistema Operacional'),
+(7, 'Linguagem Programação');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(10) NOT NULL,
+  `senha` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `usuario`, `senha`) VALUES
+(1, 'camolesi', '059a1c70fb5d34c5dafe6a76c4f88847'),
+(2, 'samuca', '059a1c70fb5d34c5dafe6a76c4f88847');
 
 --
 -- Índices para tabelas despejadas
@@ -134,6 +193,12 @@ ALTER TABLE `tiposoftware`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -147,7 +212,7 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT de tabela `equipamento`
 --
 ALTER TABLE `equipamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de tabela `inventario`
@@ -159,13 +224,19 @@ ALTER TABLE `inventario`
 -- AUTO_INCREMENT de tabela `software`
 --
 ALTER TABLE `software`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tiposoftware`
 --
 ALTER TABLE `tiposoftware`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para tabelas despejadas
