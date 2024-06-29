@@ -19,7 +19,10 @@ class Inventario
             $inv->setId($linha['id']);
             $inv->setSoftware($linha['software']);
             $inv->setEquipamento($linha['equipamento']);
-            $inv->setInstalacao($linha['instalacao']);
+
+            $data = date_create($linha['instalacao']);
+            $inv->setInstalacao(date_format($data, 'd-m-Y'));
+
             $lstInv[] = $inv;
         }
         return $lstInv;
@@ -41,8 +44,9 @@ class Inventario
         $inv->setId($linha['id']);
         $inv->setSoftware($linha['software']);
         $inv->setEquipamento($linha['equipamento']);
-        $inv->setInstalacao($linha['instalacao']);
-
+        
+        $data = date_create($linha['instalacao']);
+        $inv->setInstalacao(date_format($data, 'd-m-Y'));
 
         return $inv;
 

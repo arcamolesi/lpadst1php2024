@@ -35,6 +35,7 @@ $equipamento = $bllEqpt->SelectByID($id);
                 <h5>Responsável: <?php echo $equipamento->getResponsavel(); ?> </h5>
                 <h5>Departamento: <?php echo $equipamento->getDepartamento(); ?> </h5>
                 <h5>Compra: <?php echo $equipamento->getCompra(); ?> </h5>
+                <h5>Quantidade: <?php echo $equipamento->getQuantidade(); ?> </h5>
         </div>
 
         <div class="brown lighten-3 center col s12">

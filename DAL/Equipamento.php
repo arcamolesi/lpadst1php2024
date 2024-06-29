@@ -20,6 +20,7 @@ class Equipamento
             $eqpto->setResponsavel($linha['responsavel']);
             $eqpto->setDepartamento($linha['departamento']);
             $eqpto->setCompra($linha['compra']);
+            $eqpto->setQuantidade($linha['quantidade']); 
             $lstEqpto[] = $eqpto;
         }
         return $lstEqpto;
@@ -43,6 +44,7 @@ class Equipamento
         $eqpto->setResponsavel($linha['responsavel']);
         $eqpto->setDepartamento($linha['departamento']);
         $eqpto->setCompra($linha['compra']);
+        $eqpto->setQuantidade($linha['quantidade']); 
    
         return $eqpto;
 
@@ -67,11 +69,11 @@ class Equipamento
     }
 
     public function Update(\MODEL\Equipamento $equipamento){
-        $sql = "UPDATE equipamento SET descricao = ?, responsavel = ?, departamento = ?, compra = ? WHERE id = ?;";
+        $sql = "UPDATE equipamento SET descricao = ?, responsavel = ?, departamento = ?, compra = ?, quantidade = ? WHERE id = ?;";
         
         $con = Conexao::conectar();
         $query = $con->prepare($sql);
-        $result = $query->execute(array($equipamento->getDescricao(), $equipamento->getResponsavel(), $equipamento->getDepartamento(), $equipamento->getCompra(), $equipamento->getID()));
+        $result = $query->execute(array($equipamento->getDescricao(), $equipamento->getResponsavel(), $equipamento->getDepartamento(), $equipamento->getCompra(), $equipamento->getQuantidade(), $equipamento->getID()));
         $con = Conexao::desconectar();
       
         return $result; 

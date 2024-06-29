@@ -25,6 +25,7 @@ $lstEqpto = $bllEqpt->Select();
             <th>Responsável</th>
             <th>Departamento</th>
             <th>Compra</th>
+            <th>Quantidade</th>
             <th>Operações
                 <a class="btn-floating btn-small waves-effect waves-light green"><i class="material-icons"
                         onclick="JavaScript:location.href='formEquipamento.php'">add</i></a>
@@ -41,6 +42,7 @@ $lstEqpto = $bllEqpt->Select();
                 <td><?php echo $eqpto->getResponsavel(); ?></td>
                 <td><?php echo $eqpto->getDepartamento(); ?></td>
                 <td><?php echo $eqpto->getCompra(); ?></td>
+                <td><?php echo $eqpto->getQuantidade(); ?></td>
                 <td>
                     <a class="btn-floating btn-small waves-effect waves-light orange"
                         onclick="JavaScript:location.href='formEdtEqpto.php?id=' + '<?php echo $eqpto->getID(); ?>'">

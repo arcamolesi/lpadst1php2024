@@ -4,7 +4,7 @@ include_once 'C:\xampp\htdocs\lpadst1php2024\BLL\Inventario.php';
 
 $bllInv = new \BLL\Inventario();
 $lstInv = $bllInv->Select();
-
+if 
 ?>
 
 <!DOCTYPE html>

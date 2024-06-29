@@ -8,6 +8,7 @@ class Equipamento
     private ?string $responsavel;
     private ?int $departamento;
     private ?string $compra;
+    private ?int $quantidade; 
 
     public function __construct()
     {
@@ -61,6 +62,16 @@ class Equipamento
     public function setCompra(string $compra)
     {
         $this->compra = $compra;
+    }
+
+    public function getQuantidade()
+    {
+        return $this->quantidade;
+    }
+
+    public function setQuantidade(int $quantidade)
+    {
+        $this->quantidade = $quantidade;
     }
 
 }
